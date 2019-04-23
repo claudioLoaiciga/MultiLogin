@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "65814067496",
+    "firebase_url": "https://multilogin-23dbf.firebaseio.com",
+    "project_id": "multilogin-23dbf",
+    "storage_bucket": "multilogin-23dbf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:65814067496:android:6eeacc4f308b5f75",
+        "android_client_info": {
+          "package_name": "com.example.multilogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "65814067496-1sgja929eb6iqtn2b6ag2n47qnpm1ktn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.multilogin",
+            "certificate_hash": "07bd88ac2b30553c2f332e225a1b71a05b2c6b16"
+          }
+        },
+        {
+          "client_id": "65814067496-ockj4cq4p5ki97ik00kt19f05socnf7n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGy7Wiu72MBmtjUO-hbRWpcYTrN9mr4yo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "65814067496-ockj4cq4p5ki97ik00kt19f05socnf7n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
