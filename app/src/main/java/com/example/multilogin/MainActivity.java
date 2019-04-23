@@ -15,29 +15,38 @@ import com.google.firebase.auth.FirebaseUser;
 import java.sql.Array;
 import java.util.Arrays;
 
+/*FIREBASE AUTH:proporciona servicios de backend, SDK fáciles de usar y bibliotecas de IU ya elaboradas para autenticar a los usuarios en tu app.
+Admite la autenticación mediante contraseñas, números de teléfono, proveedores de identidad federada populares, como Google, Facebook y Twitter, y mucho más.
+* */
+
 public class MainActivity extends AppCompatActivity {
 
     private static final int RC_SIGN_IN = 123;
+    //Variables FIREBASE UI
     private FirebaseAuth mFirebaseAuth;
-    private FirebaseAuth.AuthStateListener mAuthStateListener;
+    private FirebaseAuth.AuthStateListener mAuthStateListener;//variable que me ayuda a obtener la instancia firebase auth
+    //y esta a la espera de cualquier cambio. Ej: un inicio o cierre de sesión
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        //Inicializar la variable
         mFirebaseAuth = FirebaseAuth.getInstance();
-
+        //Controlar el inicio y cierre de sesión atraves del listener propocionado por la misma clase FIREBASE Auth
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {// indicará cuando haya un cambio, osea un inicio o cierre de sesión
+                //comprobar si existe una sesión activa
                 FirebaseUser user = firebaseAuth.getCurrentUser();
-                if(user != null){
+                if(user != null){// si es diferente de null, inicio de sesion exitoso
 
 
-                }else {
-                    startActivityForResult(AuthUI.getInstance().
-                            createSignInIntentBuilder()
+                }else {// sesión no activa/cierre de sesión
+                    //limpieza de la vista, mostrar de nuevo los proveedores de inicio de sesion
+                    //item de inicio de sesion
+                    startActivityForResult(AuthUI.getInstance()// para recordar contraseñas y las cuentas con las que el usuario se ha logueado
+                            .createSignInIntentBuilder()
                             .setIsSmartLockEnabled(false)
                             .setTosUrl("http://databaseremote.esy.es/RegisterLite/html/privacidad.html")
                             .setAvailableProviders(Arrays.asList(new AuthUI.IdpConfig.EmailBuilder().build()))
